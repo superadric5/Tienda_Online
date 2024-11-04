@@ -1,0 +1,27 @@
+@keyframes slidy {
+    0% { left: 0%; }
+    25% { left: 0%; }
+    30% { left: -100%; }
+    55% { left: -100%; }
+    60% { left: -200%; }
+    85% { left: -200%;}
+    90% { left: -300%;}
+    100%{left: -300%;}
+    }
+    figure { 
+      margin: 0;
+    }
+    div#carrusel { 
+      width: 100%; overflow: hidden; 
+      height: 10%;
+      border-bottom: 1px solid black;
+    }
+    figure.slider { 
+      position: relative; width: 500%;
+      font-size: 0; animation: 15s slidy infinite; 
+    }
+    figure.slider figure { 
+      width: 20%; height: auto;
+      display: inline-block;  position: inherit; 
+    }
+    figure.slider img { width: 100%; height: 100%; object-fit: cover;}

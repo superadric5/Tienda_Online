@@ -22,7 +22,7 @@ $productos = $productosDAO->getAllProductos();
             <h1><a href="Inicio.php">La casa de informática de Madrid</a></h1>
         </div>
         <div class="enlace" id="enlace1">
-            <a href="NuestrosProductos2.php">Nuestros Productos</a>
+            <a href="NuestrosProductos.php">Nuestros Productos</a>
         </div>
         <div class="enlace" id="enlace2">
             <a href="SobreNosotros.html">Sobre nosotros</a>

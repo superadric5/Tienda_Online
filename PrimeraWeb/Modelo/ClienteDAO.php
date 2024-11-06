@@ -1,6 +1,9 @@
 <?php
 
 namespace Modelo;
+
+use DB;
+
 require 'db.php';
 require 'DTOCliente.php';
 

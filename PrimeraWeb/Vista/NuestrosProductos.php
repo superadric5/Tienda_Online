@@ -1,10 +1,10 @@
 <?php
-/*require '../Modelo/ProductosDAO.php';
+require '../Modelo/ProductosDAO.php';
 session_start();
 if(!isset($_SESSION["cliente"])){
     header("location:MenuLogin.php");
     exit;
-}*/
+}
 $productos = isset($_SESSION['productos']) ? $_SESSION['productos'] : [];
 ?>
 <html lang="es">

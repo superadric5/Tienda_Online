@@ -1,11 +1,13 @@
 <?php
 require '../Modelo/ProductosDAO.php';
 session_start();
-if(!isset($_SESSION["cliente"])){
+/*if(!isset($_SESSION["cliente"])){
     header("location:MenuLogin.php");
     exit;
-}
-$productos = isset($_SESSION['productos']) ? $_SESSION['productos'] : [];
+}*/
+$productosDAO = new ProductosDAO();
+$productos = $productosDAO->getAllProductos();
+    /*isset($_SESSION['productos']) ? $_SESSION['productos'] : []*/;
 ?>
 <html lang="es">
 <head>
@@ -49,7 +51,7 @@ $productos = isset($_SESSION['productos']) ? $_SESSION['productos'] : [];
             print "<div class='filaItems'>";
             foreach ($productos as $producto): ?>
                 <figure class="item">
-                    <img src="<?=$producto->getURL()?>" alt="<?=$producto->getDescripcion()?>">
+                    <img src="<?=$producto->getUrl()?>" alt="<?=$producto->getDescripcion()?>">
                     <figcaption><?=$producto->getNombre()?> - <?=$producto->getPrecio()?>€</figcaption>
                 </figure>
             <?php endforeach; ?>

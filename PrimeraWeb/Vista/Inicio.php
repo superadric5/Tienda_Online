@@ -42,16 +42,16 @@ session_start();
                 <div id="carrusel">
                     <figure class="slider">
                         <figure>
-                            <img src="../img/bannerNaranja.jpg" alt="Teclado blanco" >
+                            <img src="img/bannerNaranja.jpg" alt="Teclado blanco" >
                         </figure>
                         <figure>
-                            <img src="../img/informatica.jpg" alt="Smartphones">
+                            <img src="img/informatica.jpg" alt="Smartphones">
                         </figure>
                         <figure>
-                            <img src="../img/bannerInformatica.jpg" alt="Laptop" >
+                            <img src="img/bannerInformatica.jpg" alt="Laptop" >
                         </figure>
                         <figure>
-                            <img src="../img/bannerNaranja.jpg" alt="Laptop" >
+                            <img src="img/bannerNaranja.jpg" alt="Laptop" >
                         </figure>
                     </figure>
                 </div>
@@ -75,7 +75,7 @@ session_start();
                         <p>En un plazo máximo de dos días tendras tu dispositivo como nuevo.</p>
                     </div>
                     <div id="ubicacion">
-                        <img src="../img/ubicacion.jpg" alt="Ubicacion">
+                        <img src="img/ubicacion.jpg" alt="Ubicacion">
                     </div>
                 </div>
             </div>
@@ -83,17 +83,17 @@ session_start();
                 <h3>Algunos de nuestros productos que podrían interesarte</h3>
                 <br><br>
                 <figure>
-                    <a href="NuestrosProductos.php"><img src="../img/monitor1.webp" alt="Monitor en oferta"></a>
+                    <a href="NuestrosProductos.php"><img src="img/monitor1.webp" alt="Monitor en oferta"></a>
                     <figcaption>Monitor PC 60,4 cm (23,8") LG 24MR400-B, 100 Hz, IPS Full HD</figcaption>
                 </figure>
                 <br><br><br><br>
                 <figure>
-                    <a href="NuestrosProductos.php"><img src="../img/ratonErgonomico.jpg" alt="Ratón ergonómico"></a>
+                    <a href="NuestrosProductos.php"><img src="img/ratonErgonomico.jpg" alt="Ratón ergonómico"></a>
                     <figcaption>Trust Verto Ratón Vertical, Ratón Ergonómico con Cable USB 1000/1600 dpi</figcaption>
                 </figure>
                 <br><br><br><br>
                 <figure>
-                    <a href="NuestrosProductos.php"><img src="../img/ps3.webp" alt="Play Station 3 Slim"></a>
+                    <a href="NuestrosProductos.php"><img src="img/ps3.webp" alt="Play Station 3 Slim"></a>
                     <figcaption>Pack: PS3 Slim 160GB + Dual Shock 3</figcaption>
                 </figure>
                 <br><br><br><br>

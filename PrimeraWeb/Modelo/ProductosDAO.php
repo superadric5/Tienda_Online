@@ -19,7 +19,7 @@ class ProductosDAO{
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($row) {
-            return new DTOProducto($row["id"],$row["nombre"],$row["descripcion"],$row["precio"],$row["cliente_id"]);
+            return new DTOProducto($row["id"],$row["nombre"],$row["descripcion"],$row["precio"],$row["cliente_id"], $row["url"]);
         }
         else{
             return null;
@@ -32,12 +32,12 @@ class ProductosDAO{
         $stmt->bindParam(":clienteId", $ClienteId);
         $stmt->execute();
 
-        $resultado = $stmt->fetch_All(PDO::FETCH_ASSOC);
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $productos = [];
 
         foreach ($resultado as $productos) {
-            $producto = new DTOProducto($resultado["id"],$resultado["nombre"],$resultado["descripcion"],$resultado["precio"],$resultado["cliente_id"]);
+            $producto = new DTOProducto($resultado["id"],$resultado["nombre"],$resultado["descripcion"],$resultado["precio"],$resultado["cliente_id"], $resultado["url"]);
             $productos[] = $producto;
         }
         
@@ -47,12 +47,12 @@ class ProductosDAO{
         $stmt = $this->conn->prepare("SELECT * FROM producto");
         $stmt->execute();
 
-        $resultado = $stmt->fetch_All(PDO::FETCH_ASSOC);
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $productos = [];
 
         foreach ($resultado as $fila) {
-            $producto = new DTOProducto($fila["id"], $fila["nombre"], $fila["descripcion"], $fila["precio"], $fila["cliente_id"]);
+            $producto = new DTOProducto($fila["id"], $fila["nombre"], $fila["descripcion"], $fila["precio"], $fila["cliente_id"], $fila["url"]);
             $productos[] = $producto;
         }
         return $productos;
@@ -60,24 +60,25 @@ class ProductosDAO{
 
     public function insertProducto(DTOProducto $producto){
 
-        $stmt = $this->conn->prepare("INSERT INTO producto Values(\":id, :nombre, :descripcion, :precio, :cliente_id\")");
+        $stmt = $this->conn->prepare("INSERT INTO producto VALUES(\":id, :nombre, :descripcion, :precio, :cliente_id, :url\")");
         $stmt->bindParam(":id", $producto->getId());
         $stmt->bindParam(":nombre", $producto->getNombre());
         $stmt->bindParam(":descripcion", $producto->getDescripcion());
         $stmt->bindParam(":precio", $producto->getPrecio());
         $stmt->bindParam(":cliente_id", $producto->getClienteId());
+        $stmt->bindParam(":url", $producto->getUrl());
         return $stmt->execute();
 
     }
 
-    public function updateProducto($id,$nombre, $descripcion, $precio, $clienteId){
-
-        $stmt = $this->conn->prepare("UPDATE producto SET nombre=:nombre, descripcion=:descripcion, precio=:precio, cliente_id=:clienteId WHERE id=:id");
-        $stmt->bindParam(":nombre", $nombre);
-        $stmt->bindParam(":descrpcion", $descripcion);
-        $stmt->bindParam(":precio", $precio);
-        $stmt->bindParam(":clienteId", $clienteId);
-        $stmt->bindParam(":id", $id);
+    public function updateProducto(DTOProducto $producto){
+        $stmt = $this->conn->prepare("UPDATE producto SET nombre=:nombre, descripcion=:descripcion, precio=:precio, cliente_id=:clienteId, url=:url WHERE id=:id");
+        $stmt->bindParam(":nombre", $producto->getNombre());
+        $stmt->bindParam(":descrpcion", $producto->getDescripcion());
+        $stmt->bindParam(":precio", $producto->getPrecio());
+        $stmt->bindParam(":clienteId", $producto->getClienteId());
+        $stmt->bindParam(":url", $producto->getUrl());
+        $stmt->bindParam(":id", $producto->getId());
 
         return $stmt->execute();
     }

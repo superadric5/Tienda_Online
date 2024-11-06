@@ -6,13 +6,15 @@ class DTOProducto{
     private $descripcion;
     private $precio;
     private $clienteId;
+    private $url;
 
-    public function __construct($id, $nombre, $descripcion, $precio, $clienteId){
+    public function __construct($id, $nombre, $descripcion, $precio, $clienteId, $url){
         $this->id = $id;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->precio = $precio;
         $this->clienteId = $clienteId;
+        $this->url = $url;
     }
 
     public function getId(){
@@ -51,6 +53,12 @@ class DTOProducto{
         $this->clienteId = $ci;
     }
 
+    public function getUrl(){
+        return $this->url;
+    }
+    public function setUrl($url){
+        $this->url = $url;
+    }
 
 }
 

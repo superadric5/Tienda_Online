@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +15,7 @@
                 <h1>La casa de informática de Madrid</h1>
             </div>
             <div class="enlace" id="enlace1">
-                <a href="NuestrosProductos.html">Nuestros Productos</a>
+                <a href="NuestrosProductos.php">Nuestros Productos</a>
             </div>
             <div class="enlace" id="enlace2">
                 <a href="SobreNosotros.html">Sobre nosotros</a>
@@ -24,7 +27,14 @@
                 <a href="SobreMi.html">Sobre mí</a>
             </div>
             <div class="enlace" id="enlace5">
-                <a href="MenuLogin.php">Iniciar sesión</a>
+                <?php
+                    if(isset($_SESSION["cliente"])){
+                        $nombre = $_SESSION["cliente"]->getNombre();
+                        $apellido = $_SESSION["cliente"]->getApellido();
+                        print "<p>$nombre $apellido</p>";
+                    }
+                    else print "<a href='MenuLogin.php'>Iniciar sesión</a>"
+                ?>
             </div>
         </header>
         <div id="contenido">
@@ -73,21 +83,21 @@
                 <h3>Algunos de nuestros productos que podrían interesarte</h3>
                 <br><br>
                 <figure>
-                    <a href="NuestrosProductos.html"><img src="../img/monitor1.webp" alt="Monitor en oferta"></a>
+                    <a href="NuestrosProductos.php"><img src="../img/monitor1.webp" alt="Monitor en oferta"></a>
                     <figcaption>Monitor PC 60,4 cm (23,8") LG 24MR400-B, 100 Hz, IPS Full HD</figcaption>
                 </figure>
                 <br><br><br><br>
                 <figure>
-                    <a href="NuestrosProductos.html"><img src="../img/ratonErgonomico.jpg" alt="Ratón ergonómico"></a>
+                    <a href="NuestrosProductos.php"><img src="../img/ratonErgonomico.jpg" alt="Ratón ergonómico"></a>
                     <figcaption>Trust Verto Ratón Vertical, Ratón Ergonómico con Cable USB 1000/1600 dpi</figcaption>
                 </figure>
                 <br><br><br><br>
                 <figure>
-                    <a href="NuestrosProductos.html"><img src="../img/ps3.webp" alt="Play Station 3 Slim"></a>
+                    <a href="NuestrosProductos.php"><img src="../img/ps3.webp" alt="Play Station 3 Slim"></a>
                     <figcaption>Pack: PS3 Slim 160GB + Dual Shock 3</figcaption>
                 </figure>
                 <br><br><br><br>
-                <h3>Si te interesan estos productos puedes echarle un ojo a <a href="NuestrosProductos.html" id="nuestrosProductos">Nuestros productos</a></h3>
+                <h3>Si te interesan estos productos puedes echarle un ojo a <a href="NuestrosProductos.php" id="nuestrosProductos">Nuestros productos</a></h3>
             </aside>
         </div>
         

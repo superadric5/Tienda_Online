@@ -106,7 +106,6 @@ $productos = $productosDAO->getAllProductos();
             <p><a href="MapaWeb.html">Mapa Web</a></p>
             <p><a href="AdministracionCookies.html">Administración de cookies</a></p>
             <p><a href="Accesibilidad.html">Accesibilidad</a></p>
-            <p>pene</p>
         </div>
     </footer>
 </body>

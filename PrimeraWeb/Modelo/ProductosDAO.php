@@ -58,9 +58,9 @@ class ProductosDAO{
         return $productos;
     }
 
-    public function insertProducto(DTOProducto $producto){
+    public function insertProducto($producto){
 
-        $stmt = $this->conn->prepare("INSERT INTO producto VALUES(\":id, :nombre, :descripcion, :precio, :cliente_id, :url\")");
+        $stmt = $this->conn->prepare("INSERT INTO producto VALUES(:id, :nombre, :descripcion, :precio, :cliente_id, :url)");
         $stmt->bindParam(":id", $producto->getId());
         $stmt->bindParam(":nombre", $producto->getNombre());
         $stmt->bindParam(":descripcion", $producto->getDescripcion());
@@ -71,7 +71,7 @@ class ProductosDAO{
 
     }
 
-    public function updateProducto(DTOProducto $producto){
+    public function updateProducto($producto){
         $stmt = $this->conn->prepare("UPDATE producto SET nombre=:nombre, descripcion=:descripcion, precio=:precio, cliente_id=:clienteId, url=:url WHERE id=:id");
         $stmt->bindParam(":nombre", $producto->getNombre());
         $stmt->bindParam(":descrpcion", $producto->getDescripcion());

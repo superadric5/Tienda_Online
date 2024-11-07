@@ -13,11 +13,26 @@
         <br><br><br>
         <form action="controlPeticionesCliente.php" method="post">
             <p>Introduce el nombre de usuario: </p>
-            <input type="text" name="nickname" class="texto" placeholder="Escribe aquí"/>
+            <input type="text" name="nickname" class="texto" placeholder="Escribe aquí" value="<?php 
+                session_start();
+                if(isset($_GET["contrasenaIncorrecta"])){
+                    print $_SESSION["usuario"]->getNickname();
+                }
+            ?>"/>
             <br><br>
             <p>Introduce la contraseña: </p>
             <input type="password" name="password" class="texto" placeholder="Escribe aquí"/>
-            <br><br><br>
+            <?php 
+                if(isset($_GET["contrasenaIncorrecta"])){
+                    print "<p style=\"color: red; font-weight: bold;\">Contraseña Incorrecta</p>";
+                }
+            ?>
+            <br>
+            <?php 
+                if(isset($_GET["usuarioNoEncontrado"])){
+                    print "<p style=\"color: red; font-weight: bold;\">Este usuario no existe, registrate.</p>";
+                }
+            ?><br><br>
             <input id="enviar" type="submit" value="Comprobar"/>
         </form>
         <br><br>

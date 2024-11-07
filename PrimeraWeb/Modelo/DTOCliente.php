@@ -91,7 +91,7 @@ class DTOCliente
     /**
      * @return mixed
      */
-    private function getPassword()
+    public function getPassword()
     {
         return $this->password;
     }

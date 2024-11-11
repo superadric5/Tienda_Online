@@ -32,6 +32,7 @@ session_start();
                         $nombre = $_SESSION["cliente"]->getNombre();
                         $apellido = $_SESSION["cliente"]->getApellido();
                         print "<p>$nombre $apellido</p>";
+                        print "<a href='../Controlador/CerrarSesion.php'>Cerrar sesión</a>";
                     }
                     else print "<a href='MenuLogin.php'>Iniciar sesión</a>"
                 ?>

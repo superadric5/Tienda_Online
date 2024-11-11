@@ -1,0 +1,48 @@
+
+body {
+    background-color: bisque;
+
+}
+h1 {
+    font-weight: bold;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+hr.lineaDivisora {
+    margin-bottom: 90px;
+}
+
+figure{
+    width: 100%;
+    height: 100%;
+    border: 4px solid orange;
+    margin: 0;
+    padding: 0;
+}
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+div p {
+    justify-content: center;
+    align-items: center;
+}
+
+input#compra {
+    padding: 20px;
+    border-color: orange;
+    color:orange;
+    border-radius: 5px;
+    margin-left: 45%;
+    margin-bottom: 50px;
+}

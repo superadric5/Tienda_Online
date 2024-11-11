@@ -1,0 +1,10 @@
+body {
+    background-color: bisque;
+}
+div {
+    border: 1px solid gray;
+    padding: 40px;
+    width: fit-content;
+    box-shadow: 5px 5px;
+    margin: 20px;
+}

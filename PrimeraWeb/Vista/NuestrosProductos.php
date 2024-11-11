@@ -5,6 +5,9 @@ session_start();
     header("location:MenuLogin.php");
     exit;
 }*/
+if(isset($_SESSION["carrito"])){
+    $numProductosCarrito = count($_SESSION["carrito"]);
+}else $numProductosCarrito = 0;
 $productosDAO = new ProductosDAO();
 $productos = $productosDAO->getAllProductos();
     /*isset($_SESSION['productos']) ? $_SESSION['productos'] : []*/;
@@ -38,11 +41,16 @@ $productos = $productosDAO->getAllProductos();
         </div>
     </header>
 
-    
+    <div class="contenedor">
+        <h1>ECHA UN VISTADO A NUESTROS PRODUCTOS</h1>
+    </div>
+    <br><br>
+    <div class="carrito">
+        <a href="Carrito.php"><img src="img/carrito.png" alt="Carrito" width="40px" height="40px"></a> <?php print "<p>$numProductosCarrito</p>"?>
+    </div>
+
     <div id="productos">
-        <div class="contenedor">
-            <h1>ECHA UN VISTADO A NUESTROS PRODUCTOS</h1>
-        </div>
+
         <br><br><br>
         <?php
             if(empty($productos)){
@@ -50,10 +58,24 @@ $productos = $productosDAO->getAllProductos();
             }
             print "<div class='filaItems'>";
             foreach ($productos as $producto): ?>
-                <figure class="item">
-                    <img src="<?=$producto->getUrl()?>" alt="<?=$producto->getDescripcion()?>">
-                    <figcaption><?=$producto->getNombre()?> - <?=$producto->getPrecio()?>€</figcaption>
-                </figure>
+            <div class="producto">
+                <form action="../Controlador/ControlCarrito.php" method="post">
+                    <figure class="item">
+                        <img src="<?=$producto->getUrl()?>" alt="<?=$producto->getDescripcion()?>">
+                        <figcaption><?=$producto->getNombre()?> - <?=$producto->getPrecio()?>€</figcaption>
+                        <input type="hidden" name="id" value="<?=$producto->getId()?>">
+                    </figure>
+                    <?php
+                       /* if(isset($_SESSION["usurario"])){
+                            print "<input type='submit' value='Agregar al carrito' name='agregar'/>";
+                        }
+                       */
+                    ?>
+                        <!--ELIMINAR ESTA LÍNEA DE ABAJO Y DESCOMENTAR EL BLOQUE DE ARRIBA CUANDO LAS SESIONES DE USUARIO
+                            ESTEN TERMINADAS -->
+                        <input type="submit" value="Agregar al carrito" name="agregar"/>
+                </form>
+            </div>
             <?php endforeach; ?>
             <?php print "</div>"?>
 
@@ -89,6 +111,15 @@ $productos = $productosDAO->getAllProductos();
             </figure> -->
     </div>
     <br><br><br><br>
+    <?php
+        if(isset($_SESSION["usuario"])){
+            print "<a href='addProducto.php'>Añadir producto</a><br>";
+            print "<a href='eliminarProducto.php'>Eliminar producto</a><br>";
+            print "<a href='modificarProducto.php'>Modificar producto</a><br>";
+            print "<a href='listaProductos.php'>Lista de productos</a>";
+            print "<br><br>";
+        }
+    ?>
 
 
     <footer>

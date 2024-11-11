@@ -181,7 +181,7 @@ div.filaItems {
     justify-content: space-around;
 }
 figure.item {
-    width: 20%;
+    width: 100%;
     border: 5px solid rgb(255, 204, 110);
 }
 figure.item:hover{
@@ -218,6 +218,33 @@ li a:hover {
     transition-timing-function: ease-in;
     margin-left: 10px;
 }
+
+.carrito{
+    display: flex;
+    justify-content: end;
+}
+.carrito a, p {
+    padding-right:20px;
+}
+.carrito p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    display: contents
+}
+.producto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 20%;
+    padding: 20px;
+}
+.producto input {
+    margin-top: 20px;
+}
+
 
 @keyframes cambioColor {
     0% {color: black;}

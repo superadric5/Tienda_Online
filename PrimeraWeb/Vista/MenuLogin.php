@@ -11,7 +11,7 @@
     <div>
         <h1>Inicia sesión</h1>
         <br><br><br>
-        <form action="controlPeticionesCliente.php" method="post">
+        <form action="../Controlador/ControlPeticionesCliente.php" method="post">
             <p>Introduce el nombre de usuario: </p>
             <input type="text" name="nickname" class="texto" placeholder="Escribe aquí" value="<?php 
                 session_start();

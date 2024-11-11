@@ -24,7 +24,7 @@ class ClienteDAO
 
         $clientes = [];
         foreach($resultados as $fila){
-            $cliente =new DTOCliente($fila['id'], $fila['nombre'], $fila['apellido'], $fila['nickname'], $fila['password'], $fila['telefono'], $fila['domicilo']);
+            $cliente =new DTOCliente($fila['id'], $fila['nombre'], $fila['apellido'], $fila['nickname'], $fila['password'], $fila['telefono'], $fila['domicilio']);
             $clientes[] = $cliente;
         }
         return $clientes;

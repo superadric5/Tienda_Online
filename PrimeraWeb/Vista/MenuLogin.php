@@ -1,4 +1,5 @@
-<?php
+<?php 
+require "../Modelo/DTOCliente.php"
 ?>
 <html lang="es">
 <head>
@@ -10,7 +11,12 @@
 <body>
     <div>
         <h1>Inicia sesión</h1>
-        <br><br><br>
+        <br><br>
+        <?php 
+        if (isset($_GET["registroCorrecto"])){
+            print "<p style=font-weight: bold;\">Registro correcto, ya puedes iniciar sesión.</p>";
+        }
+        ?><br><br>
         <form action="../Controlador/ControlPeticionesCliente.php" method="post">
             <p>Introduce el nombre de usuario: </p>
             <input type="text" name="nickname" class="texto" placeholder="Escribe aquí" value="<?php 

@@ -1,4 +1,5 @@
 <?php
+require "../Modelo/DTOCliente.php";
 session_start();
 ?>
 <html lang="es">
@@ -28,10 +29,9 @@ session_start();
             </div>
             <div class="enlace" id="enlace5">
                 <?php
-                    if(isset($_SESSION["cliente"])){
-                        $nombre = $_SESSION["cliente"]->getNombre();
-                        $apellido = $_SESSION["cliente"]->getApellido();
-                        print "<p>$nombre $apellido</p>";
+                    if(isset($_SESSION["usuario"])){
+                        $nickname = $_SESSION["usuario"]->getNickname();
+                        print "<p id=\"usuario\">$nickname</p>";
                         print "<a href='../Controlador/CerrarSesion.php'>Cerrar sesión</a>";
                     }
                     else print "<a href='MenuLogin.php'>Iniciar sesión</a>"

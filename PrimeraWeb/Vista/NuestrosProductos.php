@@ -1,16 +1,16 @@
 <?php
 require '../Modelo/ProductosDAO.php';
 session_start();
-/*if(!isset($_SESSION["cliente"])){
+if(!isset($_SESSION["usuario"])){
     header("location:MenuLogin.php");
     exit;
-}*/
+}
 if(isset($_SESSION["carrito"])){
     $numProductosCarrito = count($_SESSION["carrito"]);
 }else $numProductosCarrito = 0;
 $productosDAO = new ProductosDAO();
 $productos = $productosDAO->getAllProductos();
-    /*isset($_SESSION['productos']) ? $_SESSION['productos'] : []*/;
+    isset($_SESSION['productos']) ? $_SESSION['productos'] : [];
 ?>
 <html lang="es">
 <head>

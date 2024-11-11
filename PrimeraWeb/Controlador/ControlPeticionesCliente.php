@@ -1,5 +1,8 @@
-<?php 
-    require_once "../Modelo/ClienteDAO.php";
+<?php
+
+use Modelo\ClienteDAO;
+
+    require "../Modelo/ClienteDAO.php";
 
     session_start();
 
@@ -9,6 +12,7 @@
     $clientes = $clienteDAO->getAllClientes();
 
     foreach($clientes as $cliente){
+
         if ($_POST["nickname"] == $cliente->getNickname() && $_POST["password"] == $cliente->getPassword()){
             $_SESSION["usuario"] = $cliente;
             $usuarioEncontrado = true;
@@ -18,20 +22,20 @@
             $contrasenaIncorrecta = true;
         }
         else{
-            $usuarioEncontrado = false;
+            $usuarioNoEncontrado = true;
         }
-
     }
 
-        if ($usuarioEncontrado){
+        if ($usuarioEncontrado == true){
             header("Location: ../Vista/Inicio.php");
         }
-        elseif ($contrasenaIncorrecta) {
-            header("Location: ../Vista/MenuLogin.php?contrasenaIncorrecta=Contraseña incorrecta, pruebe otra vez ...");
+        elseif ($contrasenaIncorrecta == true) {
+            header("Location: ../Vista/MenuLogin.php?contrasenaIncorrecta");
         } 
         else{
-            header("Location: ../Vista/MenuLogin.php?usuarioNoEncontrado=Usuario no encontrado, pruebe otra vez ...");
+            header("Location: ../Vista/MenuLogin.php?usuarioNoEncontrado");
         }
+
     
 
 

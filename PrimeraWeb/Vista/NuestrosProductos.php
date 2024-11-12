@@ -1,16 +1,12 @@
 <?php
+require_once "../Modelo/DTOCliente.php";
 require '../Modelo/ProductosDAO.php';
 session_start();
-if(!isset($_SESSION["usuario"])){
-    header("location:MenuLogin.php");
-    exit;
-}
 if(isset($_SESSION["carrito"])){
     $numProductosCarrito = count($_SESSION["carrito"]);
 }else $numProductosCarrito = 0;
 $productosDAO = new ProductosDAO();
 $productos = $productosDAO->getAllProductos();
-    isset($_SESSION['productos']) ? $_SESSION['productos'] : [];
 ?>
 <html lang="es">
 <head>
@@ -28,16 +24,23 @@ $productos = $productosDAO->getAllProductos();
             <a href="NuestrosProductos.php">Nuestros Productos</a>
         </div>
         <div class="enlace" id="enlace2">
-            <a href="SobreNosotros.html">Sobre nosotros</a>
+            <a href="SobreNosotros.php">Sobre nosotros</a>
         </div>
         <div class="enlace" id="enlace3">
-            <a href="DondeEstamos.html">Donde estamos</a>
+            <a href="DondeEstamos.php">Donde estamos</a>
         </div>
         <div class="enlace" id="enlace4">
-            <a href="SobreMi.html">Sobre mí</a>
+            <a href="SobreMi.php">Sobre mí</a>
         </div>
         <div class="enlace" id="enlace5">
-            <a href="MenuLogin.php">Iniciar sesión</a>
+            <?php
+            if(isset($_SESSION["usuario"])){
+                $nickname = $_SESSION["usuario"]->getNickname();
+                print "<p id=\"usuario\">$nickname</p>";
+                print "<a href='../Controlador/CerrarSesion.php'>Cerrar sesión</a>";
+            }
+            else print "<a href='MenuLogin.php'>Iniciar sesión</a>"
+            ?>
         </div>
     </header>
 
@@ -66,14 +69,11 @@ $productos = $productosDAO->getAllProductos();
                         <input type="hidden" name="id" value="<?=$producto->getId()?>">
                     </figure>
                     <?php
-                       /* if(isset($_SESSION["usurario"])){
+                        if(isset($_SESSION["usuario"])){
                             print "<input type='submit' value='Agregar al carrito' name='agregar'/>";
+                            print "<input type='submit' value='Vista detallada' name='vista'/>";
                         }
-                       */
                     ?>
-                        <!--ELIMINAR ESTA LÍNEA DE ABAJO Y DESCOMENTAR EL BLOQUE DE ARRIBA CUANDO LAS SESIONES DE USUARIO
-                            ESTEN TERMINADAS -->
-                        <input type="submit" value="Agregar al carrito" name="agregar"/>
                 </form>
             </div>
             <?php endforeach; ?>

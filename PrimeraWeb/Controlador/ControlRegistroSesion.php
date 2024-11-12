@@ -8,6 +8,12 @@ use Modelo\DTOCliente;
 
     $clienteDAO = new ClienteDAO();
 
+        $nombreNoValido = false;
+        $apellidosNoValido = false;
+        $contrasenaNoValida = false;
+        $telefonoNoValido = false;
+        $domicilioNoValido = false;
+
         if(!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/', $_POST["nombre"])){
             $nombreNoValido = true;
         }

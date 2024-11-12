@@ -1,8 +1,12 @@
+<?php
+    require_once "../Modelo/DTOCliente.php";
+    session_start();
+?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre mí</title>
+    <title>Donde estamos</title>
     <link rel="stylesheet" href="Estilos/estilos.css">
 </head>
 <body>
@@ -14,16 +18,23 @@
             <a href="NuestrosProductos.php">Nuestros Productos</a>
         </div>
         <div class="enlace" id="enlace2">
-            <a href="SobreNosotros.html">Sobre nosotros</a>
+            <a href="SobreNosotros.php">Sobre nosotros</a>
         </div>
         <div class="enlace" id="enlace3">
-            <a href="DondeEstamos.html">Donde estamos</a>
+            <a href="DondeEstamos.php">Donde estamos</a>
         </div>
         <div class="enlace" id="enlace4">
-            <a href="SobreMi.html">Sobre mí</a>
+            <a href="SobreMi.php">Sobre mí</a>
         </div>
         <div class="enlace" id="enlace5">
-            <a href="MenuLogin.php">Iniciar sesión</a>
+            <?php
+            if(isset($_SESSION["usuario"])){
+                $nickname = $_SESSION["usuario"]->getNickname();
+                print "<p id=\"usuario\">$nickname</p>";
+                print "<a href='../Controlador/CerrarSesion.php'>Cerrar sesión</a>";
+            }
+            else print "<a href='MenuLogin.php'>Iniciar sesión</a>"
+            ?>
         </div>
     </header>
 

@@ -19,13 +19,13 @@ session_start();
                 <a href="NuestrosProductos.php">Nuestros Productos</a>
             </div>
             <div class="enlace" id="enlace2">
-                <a href="SobreNosotros.html">Sobre nosotros</a>
+                <a href="SobreNosotros.php">Sobre nosotros</a>
             </div>
             <div class="enlace" id="enlace3">
-                <a href="DondeEstamos.html">Donde estamos</a>
+                <a href="DondeEstamos.php">Donde estamos</a>
             </div>
             <div class="enlace" id="enlace4">
-                <a href="SobreMi.html">Sobre mí</a>
+                <a href="SobreMi.php">Sobre mí</a>
             </div>
             <div class="enlace" id="enlace5">
                 <?php

@@ -82,6 +82,13 @@ class ProductosDAO{
         return $stmt->execute();
     }
 
+    public function updateProductoByClienteId($ClienteId, $productoId){
+        $stmt = $this->conn->prepare("UPDATE producto SET cliente_id=:clienteId WHERE id=:id");
+        $stmt->bindParam(":clienteId", $ClienteId);
+        $stmt->bindParam(":id", $productoId);
+        return $stmt->execute();
+    }
+
     public function deleteProducto($id){
 
         $stmt = $this->conn->prepare("DELETE * FROM producto WHERE id = :id");

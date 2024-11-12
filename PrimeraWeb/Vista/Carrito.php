@@ -2,13 +2,12 @@
     require_once "../Modelo/ProductosDAO.php";
     session_start();
 
-/* DESCOMENTAR CUANDO EL CONTROL DE INICIO SESION ESTE HECHO
 
   if(!isset($_SESSION["usuario"])){
     header("location:MenuLogin.php");
     exit;
 }
-----------------------------------------*/
+
 
 $productosDAO = new ProductosDAO();
 if(!isset($_SESSION["carrito"]))
@@ -43,6 +42,14 @@ $precioTotal = 0;
             </div>
         <hr class="lineaDivisora">
     <?php endforeach;?>
+
+    <form action="../Controlador/ControlCarrito.php" method="post">
+        <input type="submit" value="Eliminar todos los productos" name="eliminaTodos"/>
+        <?php
+            if(isset($_REQUEST["errorNoProductos"])) print "<p><span style='color: red'>$_REQUEST[errorNoProductos]</span></p>"
+        ?>
+    </form>
+
     <p>Total: <?php print $precioTotal?>€</p>
     <input id="compra" type="button" value="Realizar compra">
     <br><br>

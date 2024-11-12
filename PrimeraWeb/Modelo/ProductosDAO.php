@@ -59,32 +59,45 @@ class ProductosDAO{
     }
 
     public function insertProducto($producto){
+        $nombre = $producto->getNombre();
+        $descripcion = $producto->getDescripcion();
+        $precio = $producto->getPrecio();
+        $clienteId = $producto->getClienteId();
+        $url = $producto->getUrl();
 
         $stmt = $this->conn->prepare("INSERT INTO producto (nombre, descripcion, precio, cliente_id, url) VALUES(:nombre, :descripcion, :precio, :cliente_id, :url)");
-        $stmt->bindParam(":nombre", $producto->getNombre());
-        $stmt->bindParam(":descripcion", $producto->getDescripcion());
-        $stmt->bindParam(":precio", $producto->getPrecio());
-        $stmt->bindParam(":cliente_id", $producto->getClienteId());
-        $stmt->bindParam(":url", $producto->getUrl());
+        $stmt->bindParam(":nombre", $nombre);
+        $stmt->bindParam(":descripcion", $descripcion);
+        $stmt->bindParam(":precio", $precio);
+        $stmt->bindParam(":cliente_id", $clienteId);
+        $stmt->bindParam(":url", $url);
         return $stmt->execute();
 
     }
 
     public function updateProducto($producto){
+
+        $nombre = $producto->getNombre();
+        $descripcion = $producto->getDescripcion();
+        $precio = $producto->getPrecio();
+        $clienteId = $producto->getClienteId();
+        $url = $producto->getUrl();
+        $id = $producto->getId();
+
         $stmt = $this->conn->prepare("UPDATE producto SET nombre=:nombre, descripcion=:descripcion, precio=:precio, cliente_id=:clienteId, url=:url WHERE id=:id");
-        $stmt->bindParam(":nombre", $producto->getNombre());
-        $stmt->bindParam(":descrpcion", $producto->getDescripcion());
-        $stmt->bindParam(":precio", $producto->getPrecio());
-        $stmt->bindParam(":clienteId", $producto->getClienteId());
-        $stmt->bindParam(":url", $producto->getUrl());
-        $stmt->bindParam(":id", $producto->getId());
+        $stmt->bindParam(":nombre", $nombre);
+        $stmt->bindParam(":descripcion", $descripcion);
+        $stmt->bindParam(":precio", $precio);
+        $stmt->bindParam(":clienteId", $clienteId);
+        $stmt->bindParam(":url", $url);
+        $stmt->bindParam(":id", $id);
 
         return $stmt->execute();
     }
 
     public function deleteProducto($id){
 
-        $stmt = $this->conn->prepare("DELETE * FROM producto WHERE id = :id");
+        $stmt = $this->conn->prepare("DELETE FROM producto WHERE id = :id");
         $stmt->bindParam(":id", $id);
 
         return $stmt->execute();

@@ -10,20 +10,18 @@
     </head>
     <body>
     <div>
-        <form action="../Controlador/controlProducto" method="post">
+        <form action="../Controlador/ControlProductos.php" method="post">
             <h1>Añadir productos</h1>
-            <label>Id: </label>
-            <input type="number" name="id"/><br><br>
             <label>Nombre: </label>
-            <input type="text" name="nombre"/><br><br>
+            <input type="text" name="nombre" required/><br><br>
             <label>Descripcion: </label>
-            <input type="text" name="descripcion"/><br><br>
+            <input type="text" name="descripcion" required/><br><br>
             <label>Precio: </label>
-            <input type="number" name="precio"/><br><br>
+            <input type="number" name="precio" required/><br><br>
             <label>URL imágen: </label>
-            <input type="text" name="url"/>
+            <input type="text" name="url" required/>
             <br><br>
-            <input type="submit" name="Agregar" value="Agregar"/>
+            <input type="submit" name="accion" value="Agregar"/>
         </form>
     </div>
         <br><br>

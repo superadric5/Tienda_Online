@@ -13,7 +13,7 @@ session_start();
 <form action="../Controlador/ControlProductos.php" method="post">
     <h1>Eliminar productos</h1>
     <label>Id del producto a eliminar: </label>
-    <input type="number" name="id"/><br><br>
+    <input type="number" name="id" required/><br><br>
     <input type="submit" name="accion" value="Eliminar"/>
 </form>
 </div>

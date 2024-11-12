@@ -13,15 +13,15 @@ session_start();
 <form action="../Controlador/ControlProductos.php" method="post">
     <h1>Modificar productos</h1>
     <label>Id: </label>
-    <input type="number" name="id"/><br><br>
+    <input type="number" name="id" required/><br><br>
     <label>Nuevo nombre: </label>
-    <input type="text" name="nombre"/><br><br>
+    <input type="text" name="nombre" required/><br><br>
     <label>Nueva descripcion: </label>
-    <input type="text" name="descripcion"/><br><br>
+    <input type="text" name="descripcion" required/><br><br>
     <label>Nuevo precio: </label>
-    <input type="number" name="precio"/><br><br>
+    <input type="number" name="precio" required/><br><br>
     <label>Nueva url imágen: </label>
-    <input type="text" name="url"/>
+    <input type="text" name="url" required/>
     <br><br>
     <input type="submit" name="accion" value="Modificar"/>
 </form>

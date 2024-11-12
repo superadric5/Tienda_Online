@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("location: ../Vista/Inicio.php");
+header("location: ../Vista/index.php");
 exit;
 ?>

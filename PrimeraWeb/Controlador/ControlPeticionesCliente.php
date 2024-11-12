@@ -27,7 +27,7 @@ use Modelo\ClienteDAO;
     }
 
         if ($usuarioEncontrado == true){
-            header("Location: ../Vista/Inicio.php");
+            header("Location: ../Vista/index.php");
         }
         elseif ($contrasenaIncorrecta == true) {
             header("Location: ../Vista/MenuLogin.php?contrasenaIncorrecta");

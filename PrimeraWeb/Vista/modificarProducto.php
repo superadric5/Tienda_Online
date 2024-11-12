@@ -10,8 +10,8 @@ session_start();
 </head>
 <body>
 <div>
-<form action="../Controlador/controlProducto" method="post">
-    <h1>Añadir productos</h1>
+<form action="../Controlador/ControlProductos.php" method="post">
+    <h1>Modificar productos</h1>
     <label>Id: </label>
     <input type="number" name="id"/><br><br>
     <label>Nuevo nombre: </label>
@@ -23,7 +23,7 @@ session_start();
     <label>Nueva url imágen: </label>
     <input type="text" name="url"/>
     <br><br>
-    <input type="submit" name="Modificar" value="Modificar"/>
+    <input type="submit" name="accion" value="Modificar"/>
 </form>
 </div>
 <br><br>

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nosotros</title>
-    <link rel="stylesheet" href="Estilos/estilos.css">
+    <link rel="stylesheet" href="../Recursos/Estilos/estilos.css">
 </head>
 <body>
     <header>

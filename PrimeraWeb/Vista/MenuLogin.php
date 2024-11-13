@@ -6,7 +6,7 @@ require "../Modelo/DTOCliente.php"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio sesión</title>
-    <link rel="stylesheet" href="Estilos/Login.css">
+    <link rel="stylesheet" href="../Recursos/Estilos/Login.css">
 </head>
 <body>
     <div>

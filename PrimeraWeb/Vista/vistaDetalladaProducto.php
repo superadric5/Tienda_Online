@@ -9,7 +9,7 @@ $producto = $productoDAO->getProductoById($_GET["id"]);
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Estilos/Producto.css">
+    <link rel="stylesheet" href="../Recursos/Estilos/Producto.css">
     <title>Vista detallada del producto</title>
 </head>
 <body>

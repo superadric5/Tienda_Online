@@ -13,7 +13,7 @@ $productos = $productosDAO->getAllProductos();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestros Productos</title>
-    <link rel="stylesheet" href="Estilos/estilos.css">
+    <link rel="stylesheet" href="../Recursos/Estilos/estilos.css">
 </head>
 <body>
     <header>
@@ -49,7 +49,7 @@ $productos = $productosDAO->getAllProductos();
     </div>
     <br><br>
     <div class="carrito">
-        <a href="Carrito.php"><img src="img/carrito.png" alt="Carrito" width="40px" height="40px"></a> <?php print "<p>$numProductosCarrito</p>"?>
+        <a href="Carrito.php"><img src="../Recursos/img/carrito.png" alt="Carrito" width="40px" height="40px"></a> <?php print "<p>$numProductosCarrito</p>"?>
     </div>
 
     <div id="productos">

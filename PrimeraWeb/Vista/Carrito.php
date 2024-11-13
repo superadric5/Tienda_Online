@@ -16,7 +16,7 @@ $precioTotal = 0;
 ?>
 
 <head>
-    <link rel="stylesheet" href="Estilos/estilosCarrito.css">
+    <link rel="stylesheet" href="../Recursos/Estilos/estilosCarrito.css">
     <meta charset="UTF-8">
     <title>Carrito</title>
 </head>

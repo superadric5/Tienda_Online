@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Eliminar producto</title>
-    <link rel="stylesheet" href="Estilos/ModificacionesProductos.css">
+    <link rel="stylesheet" href="../Recursos/Estilos/ModificacionesProductos.css">
 </head>
 <body>
 <div>

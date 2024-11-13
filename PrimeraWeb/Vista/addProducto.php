@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Añadir producto</title>
-        <link rel="stylesheet" href="Estilos/ModificacionesProductos.css">
+        <link rel="stylesheet" href="../Recursos/Estilos/ModificacionesProductos.css">
     </head>
     <body>
     <div>

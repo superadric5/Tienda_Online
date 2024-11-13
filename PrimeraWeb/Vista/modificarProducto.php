@@ -15,11 +15,16 @@ session_start();
     <label>Id: </label>
     <input type="number" name="id" required/><br><br>
     <label>Nuevo nombre: </label>
-    <input type="text" name="nombre" required/><br><br>
+    <input type="text" name="nombre" required/>
+    <?php 
+        if(isset($_GET['productoExiste'])){
+                print "<br><br><span style='color: red'>Nombre ya existe</span>";
+            }
+    ?><br><br>
     <label>Nueva descripcion: </label>
     <input type="text" name="descripcion" required/><br><br>
     <label>Nuevo precio: </label>
-    <input type="number" name="precio" required/><br><br>
+    <input type="number" name="precio" min="0" required/><br><br>
     <label>Nueva url imágen: </label>
     <input type="text" name="url" required/>
     <br><br>

@@ -13,11 +13,16 @@
         <form action="../Controlador/ControlProductos.php" method="post">
             <h1>Añadir productos</h1>
             <label>Nombre: </label>
-            <input type="text" name="nombre" required/><br><br>
+            <input type="text" name="nombre" required/>
+            <?php 
+                if(isset($_GET['productoExiste'])){
+                    print "<span style='color: red'>Nombre ya existe</span>";
+                }
+            ?><br><br>
             <label>Descripcion: </label>
             <input type="text" name="descripcion" required/><br><br>
             <label>Precio: </label>
-            <input type="number" name="precio" required/><br><br>
+            <input type="number" name="precio" min="0" required/><br><br>
             <label>URL imágen: </label>
             <input type="text" name="url" required/>
             <br><br>

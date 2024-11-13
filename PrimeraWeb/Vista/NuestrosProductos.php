@@ -65,6 +65,15 @@ $productos = $productosDAO->getAllProductos();
                 <form action="../Controlador/ControlCarrito.php" method="post">
                     <figure class="item">
                         <img src="<?=$producto->getUrl()?>" alt="<?=$producto->getDescripcion()?>">
+                        <?php 
+                        if ($producto->getPrecio() <= 10) {
+                            print "<figcaption id=\"oferta\">Producto en oferta</figcaption>";
+                        }
+                        elseif ($producto->getPrecio() >= 200) {
+                            print "<figcaption id=\"calidad\">Producto de calidad</figcaption>";
+                        }
+                            
+                        ?>
                         <figcaption><?=$producto->getNombre()?> - <?=$producto->getPrecio()?>€</figcaption>
                         <input type="hidden" name="id" value="<?=$producto->getId()?>">
                     </figure>

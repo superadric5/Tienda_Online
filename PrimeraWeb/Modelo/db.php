@@ -2,7 +2,7 @@
 
 class DB{
 
-    private static $url = "localhost:3307";
+    private static $url = "localhost:3306";
     private static $user = "root";
     private static $pass = "";
     private static $dbName = "mi_tienda";

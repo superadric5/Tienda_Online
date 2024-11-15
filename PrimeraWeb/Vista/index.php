@@ -84,17 +84,17 @@ session_start();
                 <h3>Algunos de nuestros productos que podrían interesarte</h3>
                 <br><br>
                 <figure>
-                    <a href="NuestrosProductos.php"><img src="../Recursos/img/monitor1.webp" alt="Monitor en oferta"></a>
+                    <a href="NuestrosProductos.php"><img src="../Recursos/img/Subidas/monitor1.webp" alt="Monitor en oferta"></a>
                     <figcaption>Monitor PC 60,4 cm (23,8") LG 24MR400-B, 100 Hz, IPS Full HD</figcaption>
                 </figure>
                 <br><br><br><br>
                 <figure>
-                    <a href="NuestrosProductos.php"><img src="../Recursos/img/ratonErgonomico.jpg" alt="Ratón ergonómico"></a>
+                    <a href="NuestrosProductos.php"><img src="../Recursos/img/Subidas/ratonErgonomico.jpg" alt="Ratón ergonómico"></a>
                     <figcaption>Trust Verto Ratón Vertical, Ratón Ergonómico con Cable USB 1000/1600 dpi</figcaption>
                 </figure>
                 <br><br><br><br>
                 <figure>
-                    <a href="NuestrosProductos.php"><img src="../Recursos/img/ps3.webp" alt="Play Station 3 Slim"></a>
+                    <a href="NuestrosProductos.php"><img src="../Recursos/img/Subidas/ps3.webp" alt="Play Station 3 Slim"></a>
                     <figcaption>Pack: PS3 Slim 160GB + Dual Shock 3</figcaption>
                 </figure>
                 <br><br><br><br>

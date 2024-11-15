@@ -87,37 +87,6 @@ $productos = $productosDAO->getAllProductos();
             </div>
             <?php endforeach; ?>
             <?php print "</div>"?>
-
-<!-- Este código a continuación lo he comentado para guardar una especie de backup en caso de que no funcione el foreach de arriba-->
-
-           <!--  <figure class="item">
-                <img src="../img/hp.jpg" alt="Portatil HP">
-                <figcaption>HP EliteBook 850 G6 i5-8265U 256GB - 361,79€</figcaption>
-            </figure>
-            <figure class="item">
-                <img src="../img/monitor1.webp" alt="Monitor">
-                <figcaption>Monitor PC 60,4 cm (23,8") LG 24MR400-B - 89,99€</figcaption>
-            </figure>
-            <figure class="item">
-                <img src="../img/ff8.avif" alt="Videojuego Final Fantasy 8 PS1">
-                <figcaption>Final Fantasy VIII PlayStation - 20,00€</figcaption>
-            </figure>
-            <figure class="item">
-                <img src="../img/lenovo.jpg" alt="Portatil Lenovo">
-                <figcaption>Ordenador Portátil 15.6" FHD - 519,00€</figcaption>
-            </figure>
-            <figure class="item">
-                <img src="../img/ratonErgonomico.jpg" alt="Ratón ergonómico">
-                <figcaption>Trust Verto Ratón Vertical, Ratón Ergonómico - 88,99€</figcaption>
-            </figure>
-            <figure class="item">
-                <img src="../img/radiocasette.jpg" alt="Radiocasette">
-                <figcaption>Metronic 477129 - Radio CD portátil con Bluetooth - 39,00€</figcaption>
-            </figure>
-            <figure class="item">
-                <img src="../img/ps3.webp" alt="Play Station 3 Slim + Dualshock 3">
-                <figcaption>Pack: PS3 Slim 160GB + Dual Shock 3 - 90,10€</figcaption>
-            </figure> -->
     </div>
     <br><br><br><br>
     <?php

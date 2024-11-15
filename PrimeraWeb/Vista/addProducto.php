@@ -10,7 +10,7 @@
     </head>
     <body>
     <div>
-        <form action="../Controlador/ControlProductos.php" method="post">
+        <form action="../Controlador/ControlProductos.php" method="post" enctype="multipart/form-data">
             <h1>Añadir productos</h1>
             <label>Nombre: </label>
             <input type="text" name="nombre" required/>
@@ -22,9 +22,9 @@
             <label>Descripcion: </label>
             <input type="text" name="descripcion" required/><br><br>
             <label>Precio: </label>
-            <input type="number" name="precio" min="0" required/><br><br>
-            <label>URL imágen: </label>
-            <input type="text" name="url" required/>
+            <input type="number" name="precio" min="0" step="0.01" required/><br><br>
+            <label>Imagen: </label>
+            <input type="file" name="ficheroSubida" required/>
             <br><br>
             <input type="submit" name="accion" value="Agregar"/>
         </form>

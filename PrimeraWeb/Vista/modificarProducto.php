@@ -10,7 +10,7 @@ session_start();
 </head>
 <body>
 <div>
-<form action="../Controlador/ControlProductos.php" method="post">
+<form action="../Controlador/ControlProductos.php" method="post" enctype="multipart/form-data">
     <h1>Modificar productos</h1>
     <label>Id: </label>
     <input type="number" name="id" required/><br><br>
@@ -24,9 +24,9 @@ session_start();
     <label>Nueva descripcion: </label>
     <input type="text" name="descripcion" required/><br><br>
     <label>Nuevo precio: </label>
-    <input type="number" name="precio" min="0" required/><br><br>
-    <label>Nueva url imágen: </label>
-    <input type="text" name="url" required/>
+    <input type="number" name="precio" min="0" step="0.01" required/><br><br>
+    <label>Nueva imagen: </label>
+    <input type="file" name="ficheroSubida" required/>
     <br><br>
     <input type="submit" name="accion" value="Modificar"/>
 </form>
